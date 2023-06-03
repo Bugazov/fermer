@@ -7,8 +7,11 @@ import Catalog from '@/shared/assets/icons/catalog.svg';
 import { HStack } from '@/shared/ui/Stack';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import Image from 'next/image';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Input } from '@/shared/ui/Input/Input';
+import LkIcon from '@/shared/assets/icons/lk-icon.svg';
+import CartIcon from '@/shared/assets/icons/shop-icon.svg';
+import FavoriteIcon from '@/shared/assets/icons/heart-icon.svg';
 
 interface HeaderProps {
     className?: string;
@@ -42,10 +45,17 @@ export const Header = memo((props: HeaderProps) => {
                 <div className={cls.search}>
                     <Input type={'text'} placeholder={'Поиск'}/>
                 </div>
-                <HStack gap={'4'} className={cls.btn}>
-                    <Button>()</Button>
-                    <Button>()</Button>
-                    <Button>()</Button>
+
+                <HStack gap={'16'} className={cls.btn}>
+                    <Button className={cls.icon} theme={ButtonTheme.CLEAR}>
+                        <Image width={40} src={CartIcon} alt={'cart'}/>
+                    </Button>
+                    <Button className={cls.icon} theme={ButtonTheme.CLEAR}>
+                        <Image width={40} src={LkIcon} alt={'LK'}/>
+                    </Button>
+                    <Button className={cls.icon} theme={ButtonTheme.CLEAR}>
+                        <Image width={40} src={FavoriteIcon} alt={'cart'}/>
+                    </Button>
 
                 </HStack>
 
