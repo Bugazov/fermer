@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { Header } from '@/widgets/Header';
 import dynamic from 'next/dynamic';
+import { MainPage } from '@/screens/MainPage';
 
 const inter = Inter({ subsets: ['latin'] });
-const MainPage = dynamic(() => import('../app/screens/MainPage/ui/MainPage'));
 
 export default function Home () {
     return (
