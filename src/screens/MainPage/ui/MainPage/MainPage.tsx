@@ -30,7 +30,6 @@ const MainPage = memo((props: MainPageProps) => {
                     <Image className={cls.banner} src={Banner} alt={'banner'}/>
                 </VStack>
             </Container>
-
         </Page>
     );
 });
