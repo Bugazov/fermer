@@ -19,7 +19,6 @@ const MainPage = memo((props: MainPageProps) => {
 
     return (
         <Page className={classNames(cls.MainPage, {}, [className])}>
-            <Header/>
             <Container>
                 <VStack gap={'32'}>
                     <Text

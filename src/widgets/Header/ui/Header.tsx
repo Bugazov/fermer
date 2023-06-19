@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Header.module.scss';
 
-import { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import Logo from '@/shared/assets/icons/logo.svg';
 import Catalog from '@/shared/assets/icons/catalog.svg';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -14,6 +14,7 @@ import CartIcon from '@/shared/assets/icons/shop-icon.svg';
 import FavoriteIcon from '@/shared/assets/icons/heart-icon.svg';
 import dynamic from 'next/dynamic';
 import { Container } from '@/shared/ui/Container/Container';
+import Link from 'next/link';
 const Modal = dynamic(() => import('@/shared/ui/Modal/Modal'), { ssr: false });
 
 interface HeaderProps {
@@ -47,7 +48,7 @@ export const Header = memo((props: HeaderProps) => {
                     <Button theme={ButtonTheme.BACKGROUND}>
                         <HStack gap={'4'}>
                             <Image width={20} height={20} src={Catalog} alt={'Каталог'}/>
-                            <b>Каталог</b>
+                            <Link href={'product-catalog'}><b>Каталог</b></Link>
                         </HStack>
                     </Button>
                     <div className={cls.search}>
